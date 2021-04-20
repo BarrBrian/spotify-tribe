@@ -24,10 +24,8 @@ module.exports = {
     ],
   },
   devServer: {
-    publicPath: '/build/',
+    publicPath: '/public/build/',
     contentBase: path.join(__dirname, '/'),
-    compress: true,
-    port: 8080,
     proxy: {
       '/api': {
         target: 'http://localhost:3000',

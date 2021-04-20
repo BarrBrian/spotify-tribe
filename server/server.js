@@ -20,12 +20,12 @@ const mainRouter = require('./routes/mainRouter.js');
 
 // mongoose.set('useFindAndModify', false); // @what is this for?
 
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 
 app.get('/', (req, res) => {
-  console.log(path.resolve(__dirname + '/../public/index.html'))
-  res.sendFile(path.resolve(__dirname + '/../public/index.html'));
+  console.log(path.resolve(__dirname, '../public/index.html'))
+  res.sendFile(path.resolve(__dirname, '../public/index.html'));
 });
 
 app.use('/api', mainRouter);
