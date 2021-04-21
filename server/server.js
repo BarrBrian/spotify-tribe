@@ -25,11 +25,11 @@ const scopes = 'user-read-email user-top-read user-read-recently-played user-fol
 //   .catch((err) => console.log(err.message));
 
 // mongoose.set('useFindAndModify', false); // @what is this for?
-
+app.use(cors())
 app.use('/', express.static(path.resolve(__dirname, '../public')));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
-app.use(cors())
+
 
 app.get('/', (req, res) => {
   console.log(path.resolve(__dirname, '../public/index.html'))
@@ -40,13 +40,13 @@ app.get('/', (req, res) => {
 
 app.get('/login', (req, res) => {
   // console.log('hello login');
-  // res.redirect('https://www.google.com');
+  res.redirect('https://www.google.com');
 
-  res.redirect('https://accounts.spotify.com/authorize' +
-    '?response_type=code' +
-    '&client_id=' + spotifyClientId +
-    (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-    '&redirect_uri=' + encodeURIComponent(applicationDomation + '/callback'));
+  // res.redirect('https://accounts.spotify.com/authorize' +
+  //   '?response_type=code' +
+  //   '&client_id=' + spotifyClientId +
+  //   (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
+  //   '&redirect_uri=' + encodeURIComponent(applicationDomation + '/callback'));
 });
 
 // app.get('/')

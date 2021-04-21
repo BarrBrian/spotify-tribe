@@ -3,13 +3,11 @@ import React from 'react';
 class App extends React.Component {
   
   spotifyLogin(){
-    fetch('http://localhost:3000/login', {mode: 'no-cors'})
+    fetch('http://localhost:3000/login')
+      .then(data => {
+        return data.json()
+      })
       // .then(data => {
-      //   return data.json()
-      //   // window.open(data)
-      // })
-      // .then(data => {
-      //   // console.log(data);
       //   window.open(data);
       // })
   }
