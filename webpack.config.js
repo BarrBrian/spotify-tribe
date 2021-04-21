@@ -24,10 +24,14 @@ module.exports = {
     ],
   },
   devServer: {
-    publicPath: '/public/build/',
-    contentBase: path.join(__dirname, '/'),
+    publicPath: '/build',
+    contentBase: path.join(__dirname, '/public/'),
     proxy: {
       '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      },
+      '/login': {
         target: 'http://localhost:3000',
         changeOrigin: true
       }
