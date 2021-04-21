@@ -79,18 +79,6 @@ app.get('/callback', (req, res) => {
 
 });
 
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  username VARCHAR(50) UNIQUE,
-  access_token VARCHAR(1000) NOT NULL,
-  token_type VARCHAR(20) DEFAULT 'bearer',
-  scope VARCHAR(2000) NOT NULL, 
-  token_life_seconds int, 
-  expiration_date DATE,
-  refresh_token VARCHAR(1000)
-  )
-  
-
 
 // app.get('/api/callback', (req, res) => {
 //   res.render('/Users/bb/Documents/Dev_Work/Codesmith/projects/project-s/public/index.html', {message: 'the API call reverted'})
