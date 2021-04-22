@@ -1,21 +1,30 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+require('dotenv').config();
 
-const { Pool } = require('pg');
+const CONNECTION_URL = `mongodb+srv://BrianBarr:${process.env.MONGO_PW}@cluster0.ekxhs.mongodb.net/SpotifyTribe?retryWrites=true&w=majority`;
 
-//NOTE: you may want to configure this with your own URL from ElephantSQL
-const CONNECTION_URL = '';
+mongoose
+  .connect(CONNECTION_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .catch((err) => console.log(err.message));
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 
-// Your schemas will go here. Replace newSchema with the schema name. 
-const newSchema = new Schema({
-  // schema info here
-  name: String,
+const UserSettingsSchema = new Schema({
+  username: { type: String, unique: true, required: true },
+  profile_layout: [ { widget_name: String, options: {} } ],
+  featured_playlist: { 
+    active: { type: Boolean, default: false }, 
+    uri: { type: String, default: null }
+  }
 });
 
+const UserSettings = mongoose.model('user_settings', UserSettingsSchema);
 
-
-// The name of the model you will be referencing throughout project, rename schemaModel. 'dbname' should match the database you are using in Mongo.
-const schemaModel = mongoose.model('dbName', newSchema);
-
-module.exports = schemaModel;
+module.exports = UserSettings;

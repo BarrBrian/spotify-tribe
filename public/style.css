@@ -253,3 +253,7 @@ nav ul li{
 .song-table-header-row th{
   text-align: left;
 }
+
+.settings-body{
+  margin-left: 50px;
+}

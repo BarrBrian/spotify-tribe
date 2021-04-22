@@ -30,13 +30,17 @@ module.exports = {
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
-        changeOrigin: true
+        // changeOrigin: true
       },
       '/api/spotify': {
         target: 'http://localhost:3000',
-        changeOrigin: true
+        // changeOrigin: true
       },
       '/login': {
+        target: 'http://localhost:3000',
+        // changeOrigin: true
+      },
+      '/settings': {
         target: 'http://localhost:3000',
         changeOrigin: true
       }
