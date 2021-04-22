@@ -1,3 +1,255 @@
-h1{
-  color: #1DB954
+:root{
+  font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+  --spotify-green: rgb(55,185,84);
+}
+
+html{
+  min-height: 100%;
+}
+
+body{
+  margin: 0;
+  background: rgba(54,71,84,1);
+  background: linear-gradient(180deg, rgba(25,25,25,1) 20%, rgba(54,71,84,1) 100%);
+  background-repeat: no-repeat;
+  color: white;
+  /* min-height: 100%; */
+}
+
+iframe html {
+  min-height: 0;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  height: 3em;
+  background-color: rgb(25,25,25);
+  padding: 0 3em;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items:flex-end;
+  margin-right: 20px;
+}
+
+nav ul li{
+  list-style: none;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.navLink{
+  color: white;
+  text-decoration: none;
+}
+
+.navLink:hover{
+  color: var(--spotify-green);
+  text-decoration: wavy; 
+}
+
+
+
+.landing-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.login-button{
+  font-size: 70px;
+  padding: .5em 1em;
+  border-radius: 20px;
+  background-image: -webkit-gradient(linear,
+                    40% 0%,
+                    75% 84%,
+                    from(#4D9C41),
+                    to(#19911D));
+}
+
+.login-button:hover{
+  background-image: -webkit-gradient(linear,
+                    40% 0%,
+                    75% 84%,
+                    from(#19911D),
+                    to(#4D9C41));
+}
+
+.login-button:active, .login-button:target, .login-button:focus{
+  outline: none;
+}
+
+
+
+.home-header{
+  color: #1DB954;
+  font-weight: 600;
+  justify-self: flex-start;
+  align-self:  flex-start;
+
+}
+
+.profile-page{
+  display:grid;
+  padding: 30px;
+  grid-template-columns: 1fr minmax(550px, 60%) minmax(250px, 30%) 1fr;
+  grid-template-rows: 200px min-content min-content 1fr;
+  grid-column-gap: 2.8em;
+  /* grid-template-columns: 1fr minmax(30%) minmax(70%) 1fr; */
+}
+
+.profile-header{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 20% 65% 15%;
+
+}
+
+.pfp-container{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin:0;
+  padding: 0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+
+.profile-bio {
+  padding-top: 2em;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.profile-buttons{
+  display: flex;
+  justify-content: flex-start;
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.profile-buttons button{
+  /* height: 100%; */
+  padding: .4em 1em;
+  margin-right: 1.5em;
+}
+
+.profile-photo{
+  display: block;
+  max-width: 100%;
+  /* max-height: 100%; */
+  margin:0;
+}
+
+.top-artists-container{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.featured-playlist{
+  grid-column: 3 / 4;
+  grid-row: 2 / span 2;
+  max-height: 80vh;
+  /* height: minmax(200px,; */
+}
+
+.top-artist-list {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 0;
+}
+
+.top-artist-list li{
+  list-style: none;
+  margin: 4px;
+}
+
+.arist-card-name{
+  font-weight: 550;
+  color: rgb(255,255,255);
+  text-decoration: none;
+  margin-bottom: 1em;
+  align-self: flex-start;
+}
+
+.arist-card-name:hover{
+  color: var(--spotify-green)
+}
+
+.artist-card-img-container{
+  width: 100%;
+  margin-top: .6em;
+}
+
+.artist-card-img-container img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.artist-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 10em;
+  height: 14em;
+  border: grey solid 1.5px;
+  padding: 10px;
+  border-radius: 2%;
+  background-color: rgb(25,25,25);
+}
+
+
+
+.scroll-style::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  background-color: #364754;
+  border-radius: 10px;
+}
+
+.scroll-style::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: #364754;
+}
+
+.scroll-style::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #FFF;
+  background-image: -webkit-gradient(linear,
+                     40% 0%,
+                     75% 84%,
+                     from(#4D9C41),
+                     to(#19911D),
+                     color-stop(.6,#54DE5D));
+}
+
+.top-recent-songs-container{
+  grid-column: 2 / 3;
+  font-size: 12px;
+}
+
+.small-album-art img{
+  height: 32px;
+}
+
+.song-table-row td{
+  overflow: hidden;
+  padding: 2px 4px;
+}
+
+.song-table-header-row th{
+  text-align: left;
 }

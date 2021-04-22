@@ -5,7 +5,7 @@ import ProfileHeader from './ProfileHeader.jsx';
 import ProfileButtons from './ProfileButtons.jsx';
 import TopArtists from './TopArtists.jsx';
 import FeaturedPlaylist from './FeaturedPlaylist.jsx';
-import SearchBar from './SearchBar.jsx';
+import TopRecentSongs from './TopRecentSongs.jsx'
 
 const Profile = props => {
 
@@ -14,8 +14,8 @@ const Profile = props => {
   return (
     <div className="profile-page">
       <ProfileHeader />
-      {/* <SearchBar /> */}
       <TopArtists />
+      <TopRecentSongs />
       <FeaturedPlaylist />
     </div>
   )
