@@ -140,6 +140,15 @@ nav ul li{
   /* height: 100%; */
   padding: .4em 1em;
   margin-right: 1.5em;
+  background-color: transparent;
+  border-radius: 15%;
+  border: var(--spotify-green) solid 1.5px;
+  color: var(--spotify-green);
+}
+
+.profile-buttons button:hover{
+  background-color: var(--spotify-green);
+  color: black;
 }
 
 .profile-photo{

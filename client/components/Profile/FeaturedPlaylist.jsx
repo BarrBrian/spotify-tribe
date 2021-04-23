@@ -3,9 +3,13 @@ import { useParams } from 'react-router-dom';
 
 const FeaturedPlaylist = props => {
 
-  
+  const reg = /playlist[:\/](.*)/
 
-  const playlistUri = '2abUF7iBSFlamCt6iTXbCZ'
+  const uri = props.uri.match(reg)[1];
+
+  console.log(uri);
+  
+  const playlistUri = uri || '2abUF7iBSFlamCt6iTXbCZ'
 
   return (
     <div className="featured-playlist">
