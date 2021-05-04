@@ -37,6 +37,8 @@ const Profile = props => {
     }
   }
 
+  
+
   if (Object.keys(layout).length > 0){
     components.push(selectComponent(layout.profile_layout[0].widget_name))
     components.push(selectComponent(layout.profile_layout[1].widget_name))
@@ -44,7 +46,7 @@ const Profile = props => {
       components.push(<FeaturedPlaylist uri={ layout.featured_playlist.uri }/>)
     }
   }
-
+  
   
   
   return (
