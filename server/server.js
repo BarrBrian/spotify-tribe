@@ -50,15 +50,18 @@ app.get('/callback',
   res.redirect(profileUrl);
 })
 
+// send all unexpected routes to the homepage
+// 404 can be handled in the front end by react-router
 app.use('/*', (req, res) => {
   // res.redirect(appRootDomain)
   res.sendFile(path.resolve(__dirname, '../public/index.html'));
 });
 
+// Global Error Handler
 app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
-    status: 400,
+    status: 500,
     message: { err: 'An error occurred' }
   };
 
